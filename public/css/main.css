@@ -1,0 +1,241 @@
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    text-decoration: none;
+}
+a{
+    color:black;
+}
+a:hover{
+    font-weight:bolder;
+}
+body{
+    background-color:rgba(232,232,232);
+}
+.blog{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+
+.header{
+    width:100%;
+    height:320px;
+    position: relative;
+    border:1px;
+}
+.header .backimg{
+    position: relative;
+    left:0;
+    top:0;
+    width:100%;
+    height:270px;
+}
+.header .backimg img{
+    width:100%;
+    height:270px;
+}
+.header .logo{
+    position: absolute;
+    z-index:999;
+    left:50%;
+    margin-left:-50px;
+    top:60px;
+}
+.header .logo img{
+    width:100px;
+}
+
+.header .classify{
+    width:100%;
+    height:50px;
+    background-color: white;
+    position: relative;
+    border-bottom:1px solid white;
+}
+.header .classify ul{
+    display:inline-block;
+    position: relative;
+    left:50%;
+    margin-left:-500px;
+    width:1000px;
+    height:50px;
+}
+.header .classify ul li{
+    text-align:center;
+    font-weight:bolder;
+    float:left;
+    height: 50px;
+    line-height:50px;
+    background-color:white;
+}
+.header .classify ul li:hover{
+    border-bottom:2px solid rgba(220,117,39);
+}
+
+.content{
+    position: relative;
+    left:50%;
+    margin-left:-600px;
+    margin-top:35px;
+    width:1200px;
+    height:1000px;
+}
+.content .essayBox{
+    position: relative;
+    display:inline-block;
+    width:800px;
+    height:100%;
+    margin-right:50px;
+}
+.content .essayBox .essay{
+    position: relative;
+    width:100%;
+    height:180px;
+    margin-bottom:20px;
+    background-color:white;
+    border-radius:4px;
+}
+.content .essayBox .essay .introduce{
+    position: relative;
+    padding-top:20px;
+    text-align:center;
+}
+.content .essayBox .essay .introduce .info{
+    color:rgba(0,168,243);
+}
+.content .essayBox .essay .introduce h2{
+    margin-bottom:5px;
+}
+.content .essayBox .essay .introduce span{
+    font-size:14px;
+}
+.content .essayBox .essay p{
+    font-size:16px;
+    margin-left:20px;
+    margin-top:10px;
+}
+.content .essayBox .essay button{
+    width:80px;
+    height:25px;
+    color:white;
+    text-align:center;
+    line-height:20px;
+    background-color:rgba(220,117,39);
+    border:0;
+    border-radius:4px;
+    margin-left:20px;
+    margin-top:10px;
+}
+.content .essayBox .essay button:hover{
+    cursor: pointer;
+    background-color:rgba(240,150,100)
+}
+
+.content .userBox{
+    position: absolute;
+    display:inline-block;
+    width:341px;
+    height:100%;
+}
+.content .userBox .rightBox{
+    font-size:14px;
+    background-color:white;
+    margin-bottom:15px;
+    box-sizing:border;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    padding:20px;
+    border-radius:4px;
+}
+.content .userBox .rightBox .title{
+    border-bottom:1px solid rgba(232,232,232);
+    height:15px;
+    font-size:18px;
+    font-weight:bold;
+    padding-bottom:10px;
+    margin-bottom:17px;
+}
+.content .userBox .rightBox .title span{
+    border-bottom:2px solid rgba(220,117,39);
+}
+.content .userBox .rightBox .colDrak{
+    display:inline-block;
+    height:17px;
+    color:red;
+    line-height:17px;
+    margin-bottom:8px;
+    text-align:right;
+}
+.content .userBox .rightBox .line{
+    width:82%;
+    height:25px;
+    text-align:right;
+}
+.content .userBox .rightBox .line input{
+    width:200px;
+    height:22px;
+    border-radius:4px;
+    border:0;
+    background-color:rgba(232,232,232);
+}
+.content .userBox .rightBox .line button{
+    width:82%;
+    border:0;
+    border-radius:4px;
+    background-color:rgba(220,117,39);
+    height:22px;
+}
+.content .userBox .rightBox .textRight{
+    margin-top:10px;
+}
+.content .userBox .rightBox .line button:hover{
+    background-color:rgba(240,150,100);
+}
+.content .userBox .userinfo{
+    width:100%;
+    height:160px;
+}
+.content .userBox .login{
+    width:100%;
+    height:200px;
+}
+.content .userBox .register{
+    width:100%;
+    height:220px;
+}
+.content .userBox .community{
+    width:100%;
+    text-align:left;
+}
+
+.footer{
+    position: relative;
+    width:100%;
+    height: 100px;
+}
+
+.footer ul{
+    display:inline-block;
+    position: relative;
+    height:100px;
+    left:50%;
+    margin-left:-500px;
+    margin-top:10px;
+    border-top:1px solid black;
+}
+
+.footer ul li{
+    width:100px;
+    display: block;
+    text-align:center;
+    font-weight:bolder;
+    float:left;
+    height: 100px;
+    margin:auto 50px;
+    line-height:25px;
+}

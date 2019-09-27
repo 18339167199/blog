@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to my blog</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="shortcut icon" href="/public/images/blog.png">
+    <script src="/public/js/jquery-3.3.1.js"></script>
+</head>
+
+<body style="overflow:scroll; overflow-x:hidden;">
+    <div class="blog">
+
+        <div class="header">
+            <div class="backimg"><img src="/public/images/back.jpg" alt=""></div>
+            <div class="logo"><img src="/public/images/taiger.png" alt=""></div>
+            <div class="classify">
+                <ul id="table"></ul>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="essayBox" id='2'>
+
+                {% if article.length == 0 %}
+                <div class="essay">
+                    <div class="introduce">
+                        <h1>暂时没有该板块的内容</h1>
+                    </div>
+                </div>
+                {% else %}
+
+                {% for a in article %}
+
+                <div class="essay">
+                    <div class="introduce">
+                        <h2>{{ a.title }}</h2>
+                        <span>作者:</span><span calss="info name"><a
+                                href="#">{{ a.author }}</a><span>&nbsp;-&nbsp;:</span></span><span
+                            class="info time">时间:{{ a.date.toLocaleString() }}&nbsp;-&nbsp;</span><span>阅读:</span><span
+                            class="info number">321</span><span>&nbsp;-&nbsp;评论:</span><span
+                            class="info commet">10</span>
+                    </div>
+                    <p>{{ a.description }}</p>
+                    <button><a href="/article?id={{ a._id.toString() }}">阅读全文</a></button>
+                </div>
+
+                {% endfor %}
+
+                {% endif %}
+
+            </div>
+
+            <div class="userBox">
+
+                {% if userInfo._id %}
+
+                <div class="rightBox userinfo" id="userinfo">
+                    <div class="title"><span>用户信息</span></div>
+                    <p><span class="colDrak" id="username">{{userInfo.username}}</span></p>
+
+                    {% if userInfo.isAdmin %}
+                    <p>
+                        <span class="colDrak">你好, 你是管理员</span>
+                        <a href="/admin">点击进入管理</a>
+                    </p>
+                    {% else %}
+                    <p><span class="colDrak">你好, 欢迎光临我的博客</span></p>
+                    {% endif %}
+
+                    <p><span class="colDrak"><a href="logout" id="logoutBtn">退出</a></span></p>
+                </div>
+
+                {% else %}
+
+                <div class="rightBox login" id="login">
+                    <div class="title"><span>登录</span></div>
+                    <div class="line"><span class="colDrak">用户名:</span><input name="username" type="text"><em></em>
+                    </div>
+                    <div class="line"><span class="colDrak">密码:</span><input name="password" type="text"><em></em></div>
+                    <div class="line"><span class="colDrak"></span><button>登录</button></div>
+                    <p class="textRight">还没注册?<a href="#" class="colMint">马上注册</a></p>
+                    <p class="colWarning textCenter"></p>
+                </div>
+
+                <div class="rightBox register" id="register" style="display:none;">
+                    <div class="title"><span>注册</span></div>
+                    <div class="line"><span class="colDrak">用户名:</span><input name="username" type="text"></div>
+                    <div class="line"><span class="colDrak">密码:</span><input name="password" type="password"></div>
+                    <div class="line"><span class="colDrak">确认:</span><input name="repassword" type="password"></div>
+                    <div class="line"><span class="colDrak"></span><button>注册</button></div>
+                    <p class="textRight">已有账号?<a href="#" class="colMint">马上登录</a></p>
+                    <p class="colWarning textCenter"></p>
+                </div>
+
+                {% endif %}
+
+                <div class="rightBox community">
+                    <div class="title"><span>社区</span></div>
+                    <p class="textRight"><a href="https://www.bilibili.com">bilibili社区</a></p>
+                    <p class="textRight"><a href="http://www.expressjs.com.cn">Express</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li>
+                    <div class="tips">关于我们</div>
+                    <div class="cards"><a href="#">联系方式</a></div>
+                    <div class="cards"><a href="#">邮箱地址</a></div>
+                    <div class="cards"><a href="#">了解更多</a></div>
+                </li>
+                <li>
+                    <div class="tips">帮助</div>
+                    <div class="cards"><a href="#">疑惑解答</a></div>
+                    <div class="cards"><a href="#">加入我们</a></div>
+                </li>
+                <li>
+                    <div class="tips">技术支持</div>
+                    <div class="cards"><a href="#">JQuery</a></div>
+                    <div class="cards"><a href="#">NODEJS</a></div>
+                    <div class="cards"><a href="#">BootStrap</a></div>
+                </li>
+                <li>
+                    <div class="tips">APP</div>
+                    <div class="cards"><img src="/public/images/QRCode01.png" alt="二维码"></div>
+                </li>
+                <li>
+                    <div class="tips">关注我们</div>
+                    <div class="cards"><img src="/public/images/QRCode02.png" alt="二维码"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="/public/js/main.js"></script>
+</body>
+
+</html>

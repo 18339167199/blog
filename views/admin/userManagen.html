@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li><span>用户列表</span></li>
+</ol>
+
+<h3>用户列表</h3>
+
+{% include 'page.html' %}
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>是否是管理员</th>
+    </tr>
+
+    {% for user in userData %}
+    <tr>
+        <td>{{ user._id.toString() }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td>
+            {% if user.isAdmin %}
+            是
+            {% else %}
+            否
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% include 'page.html' %}
+
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="managenInput">Input&nbsp;&nbsp;ID</label>
+            <input type="text" class="form-control" id="managenInput" placeholder="输入ID进行操作">
+        </div>
+        <button class="btn btn-default" id="updateBtn">update</button>
+        <button class="btn btn-default" id="deleteBtn">delete</button>
+    </form>
+</div>
+
+<div class="continer" id='managen' style="display:none;">
+    <form action="admin/managen">
+        <div class="form-group" id="mangen-1">
+            <label for="one">Input Username</label>
+            <input type="text" class="form-control" id="one" placeholder="Username">
+        </div>
+        <div class="form-group" id="managen-2">
+            <label for="two">Input Password</label>
+            <input type="text" class="form-control" id="two" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default" id="managen-3">Submit</button>
+        <button class="btn btn-default" id="managen-4">收起</button>
+    </form>
+    
+</div>
+{% endblock %}

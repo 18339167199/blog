@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li><span>评论管理</span></li>
+</ol>
+
+<div class="container-fluid">
+    <table class="table table-hover table-bordered table-striped">
+        <tr>
+            <th>评论内容</th>
+            <th>用户</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+
+        {% for comment in commentInfo %}
+        <tr>
+            <th>{{ comment.comment }}</th>
+            <th>{{ comment.username }}</th>
+            <th>{{ comment.date.toLocaleString() }}</th>
+            <th>
+                <a href="/admin/comment/delete?comment={{ comment._id.toString() }}">删除</a>
+            </th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

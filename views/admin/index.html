@@ -1,0 +1,18 @@
+{% extends 'layout.html'%}
+
+{% block nav %}
+
+<li><a href="admin/user">用户管理</a></li>
+<li><a href="admin/classify">分类管理</a></li>
+<li><a href="admin/comment">评论管理</a></li>
+
+{% endblock %}
+
+{% block main %}
+
+<div class="jumbotron container">
+    <h1>Hello, {{userInfo.username}}!</h1>
+    <p>欢迎进入我的博客后台管理界面</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li><span>分类列表</span></li>
+</ol>
+
+<h3>分类列表</h3>
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>分类名称</th>
+    </tr>
+
+    {% for classify in classifyInfo %}
+    <tr>
+        <td>{{ classify._id.toString() }}</td>
+        <td>{{ classify.classify }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
